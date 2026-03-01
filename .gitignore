@@ -29,4 +29,6 @@ vault.yml
 # Ignore editor backup files (e.g., Vim, Emacs)
 *~
 *.swp
-*.swo
+*.swo.ansible/
+
+.ansible/

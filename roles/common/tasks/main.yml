@@ -1,0 +1,21 @@
+# roles/tasks/main.yml
+- name: update existing package
+  apt: 
+    update_cache: yes
+
+- name: install basic system tools
+  apt:
+    name:
+      - curl
+      - wget
+      - vim 
+      - git
+      - htop
+      - lsb-release
+      - build-essential 
+      - sudo 
+      - ufw 
+      - ssh 
+      - rsync
+      - locate 
+    state: present
