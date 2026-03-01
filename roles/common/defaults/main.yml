@@ -1,0 +1,14 @@
+# roles/defaults/main.yml
+common_packages:
+  - curl
+  - wget
+  - vim
+  - git
+  - htop
+  - lsb-release
+  - build-essential
+  - sudo
+  - ufw
+  - ssh
+  - rsync
+  - locate
