@@ -1,0 +1,32 @@
+# Ignore Ansible retry files
+*.retry
+
+# Ignore log files
+*.log
+
+# Ignore cache directories
+.cache/
+
+# Ignore Python virtual environments
+venv/
+env/
+
+# Ignore environment-specific configuration files
+*.yml.backup
+
+# Ignore files containing sensitive information (e.g., passwords, keys)
+secrets.yml
+vault.yml
+*.pem
+*.key
+
+# Ignore IDE configuration files (e.g., VS Code)
+.vscode/
+
+# Ignore editor configuration files (e.g., Sublime Text)
+.idea/
+
+# Ignore editor backup files (e.g., Vim, Emacs)
+*~
+*.swp
+*.swo
