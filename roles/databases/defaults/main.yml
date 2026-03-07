@@ -1,0 +1,14 @@
+#roles/databases/defaults/main.yml
+
+#================================#
+db_packages:
+  - postgresql
+  - postgresql-contrib 
+  - postgresql-client
+  - mariadb-server
+  - mariadb-client
+  - mariadb-backup
+  - python3-pymysql
+  - python3-psycopg2
+  - pwgen 
+
