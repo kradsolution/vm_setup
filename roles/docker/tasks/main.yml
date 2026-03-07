@@ -1,0 +1,48 @@
+#================================#
+# Tasks to install Docker on Debian 12
+#================================#
+
+# 1️⃣ Install required system packages
+- name: Install system packages required for Docker
+  package:
+    name: "{{ docker_packages_system }}"
+    state: present
+
+# 2️⃣ Copy Docker GPG key from control node
+- name: Copy Docker GPG key
+  copy:
+    src: docker-archive-keyring.gpg   # file located in roles/docker/files/
+    dest: /usr/share/keyrings/docker-archive-keyring.gpg
+    mode: '0644'
+
+# 3️⃣ Add Docker repository for Debian
+- name: Add Docker repository
+  apt_repository:
+    repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian {{ ansible_lsb.codename }} stable"
+    state: present
+    filename: docker
+
+# 4️⃣ Update apt cache
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+# 5️⃣ Install Docker packages
+- name: Install Docker packages
+  package:
+    name: "{{ docker_packages_docker }}"
+    state: present
+
+# 6️⃣ Ensure Docker service is running
+- name: Ensure Docker service is running
+  service:
+    name: docker
+    state: started
+    enabled: true
+
+# 7️⃣ Add current user to Docker group (optional)
+- name: Add current user to Docker group
+  user:
+    name: "{{ ansible_user }}"  # root does not need it, but other users may
+    groups: docker
+    append: yes

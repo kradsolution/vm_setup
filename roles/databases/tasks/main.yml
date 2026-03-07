@@ -15,7 +15,7 @@
    enabled: true
   
   loop:
-    - mariadb-server
+    - mariadb
     - postgresql
 
 # there are two ways to manage services :

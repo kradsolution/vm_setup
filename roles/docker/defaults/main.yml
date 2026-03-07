@@ -1,0 +1,14 @@
+# roles/docker/defaults/main.yml 
+#================================#
+
+docker_packages_system:
+  - apt-transport-https
+  - ca-certificates
+  - gnupg
+  - lsb-release
+
+docker_packages_docker:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-compose-plugin
