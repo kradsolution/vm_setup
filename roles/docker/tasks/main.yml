@@ -9,9 +9,11 @@
     state: present
 
 # 2️⃣ Copy Docker GPG key from control node
-- name: Copy Docker GPG key
-  copy:
-    src: docker-archive-keyring.gpg   # file located in roles/docker/files/
+# roles/docker/tasks/main.yml
+
+- name: Download Docker GPG key
+  get_url:
+    url: https://download.docker.com/linux/debian/gpg
     dest: /usr/share/keyrings/docker-archive-keyring.gpg
     mode: '0644'
 
