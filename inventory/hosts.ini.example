@@ -1,0 +1,2 @@
+[krad_vps]
+server ansible_host=YOUR_SERVER_IP

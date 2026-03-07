@@ -32,3 +32,5 @@ vault.yml
 *.swo.ansible/
 
 .ansible/
+
+inventory/hosts.ini

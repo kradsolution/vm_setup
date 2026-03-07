@@ -1,0 +1,7 @@
+---
+- name: Setup VM
+  hosts: all
+  become: true
+
+  roles:
+    - common
